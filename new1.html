@@ -7,7 +7,15 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Finance and loan services</title>
 		<link href="./new1.css" rel="stylesheet">
-	
+		<style>
+                  fieldset {
+                          font-size: 12px;
+                          padding: 10px;
+                          width: 250px;
+                          text-align: left;
+                          border-style: inset;
+                           }
+                </style>
 		
 	</head>
 
@@ -27,7 +35,11 @@
                 <section>
 			<h1>overview</h1>
 			<div class="loan_app_form">
-            	<p>A home loan can act as a comprehensive solution to a home buyer. Piramal Capital and Housing Finance offer multiple financial solutions that can take you a step closer to your dream of having your own house. Simple and hassle-free application procedures, efficient customer care and dedicated relationship managers make the loan journey smooth.</p>
+            	<p><b>A loan application is an entire process starting from the negotiation of terms until the loan is reviewed and approved for disbursement. 
+                A loan application form is first provided to the client, and the client is required to fill it out correctly before the application 
+                form proceeds to the review stage. The client must provide truthful information, including their personal details, physical address, 
+                financial statements, evidence of asset ownership, etc. The information should be verifiable, and the credit officer should verify the 
+                accuracy and truthfulness of the information provided in the application document.</b></p>
         	</div>
 		</section>
 		
@@ -74,14 +86,66 @@
 			</div>
 
 		</div>
-
-		<section style="width: 100%;">
+		<div class="carousel-inner">
+                      	<div class="item active">
+                           <style>
+                               img {
+                                      border: 10px solid #555;
+                                    }
+                            </style>
+                          <center><img src="Types.png" alt="loans" align="center" style="width:50%;"></center>
+                </div>
+                <section style="width: 70%;">
 			<div class="loan_app_form" >
-				<iframe width="100%" height="400" src="https://www.youtube.com/embed/1Laie4Q1e3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<center><iframe width="70%" height="400" src="https://www.youtube.com/embed/1Laie4Q1e3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                                encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 			</div>
 		</section>
-
-		
+                <center>
+                <p><b><h2>Tell us little bit about yourself and we'll be in touch right away<h2></b></p></center>
+                <center>
+                <form>
+                <fieldset>
+		<label for="fname"><h3>First name:</h3></label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname"><h3>Last name:</h3></label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="email"><h3>Email:</h3></label><br>
+                <input type="text" id="email" name="email"><br>
+                <label for="Contact"><h3>Contact Number:</h3></label><br>
+                <input type="text" id="contact" name="contact"><br>
+                <p><h2><b>GENDER:<h2><b></p>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html"><h3>Female</h3></label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css"><h3>Male</h3></label><br>
+                <p><b>Tick the list of documents you have:<b></p>
+                <input type="checkbox" id="adhar" name="adhar" value="adhar">
+                <label for="adhar"><h3>Aadhar Card</h3></label><br>
+                <input type="checkbox" id="pan" name="pan" value="pan">
+                <label for="pan"><h3>PAN card</h3></label><br>
+                <input type="checkbox" id="Voter Id" name="Voter Id" value="Voter Id">
+                <label for="Voter Id"><h3>Voter Id</h3></label><br>
+                <input type="checkbox" id="domicile" name="domicile" value="domicile">
+                <label for="domicile"><h3>Domicile certificate</h3></label><br>
+                <input type="checkbox" id="ITR" name="ITR" value="ITR">
+                <label for="ITR"><h3>ITR acknowledgement</h3></label><br>
+                <p><b>Select your country:<b></p>
+                <select name = "dropdown">
+                <option value = "India" selected>India</option>
+                <option value = "USA">USA</option>
+                <option value = "UK">UK</option>
+                <option value = "Russia">Russia</option>
+                <option value = "Africa">Africa</option>
+                <option value = "France">France</option>
+                <option value = "Germany">Germany</option>
+                </select><br>
+                <p><b>Message for us:</b></p>
+                <input type="textbox" id="message" name="message"><br>
+                <input type="submit" value="Submit">
+                </fieldset>
+                </form>
+                </center>
 
 
 	</body>
