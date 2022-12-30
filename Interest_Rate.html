@@ -124,9 +124,158 @@
                 </table>
 			</div>
 		</section>
-		
+	
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <style>
+          table td,th
+            {
+            text-align: center;
+            border-radius:20px;
+            background-color: antiquewhite;
+            font-size: 20px;
+            transition: 0.2ms;
+            }
+            table
+            {
+            text-align: center;
+            }
+            table td:hover ,th:hover
+            {
+                transform: scale(1.25);
+                cursor: pointer;
+            }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+ <body style="font-family:Century Gothic;margin:0;" class="backg">
+        <div style="background-color: rgb(3, 137, 3);border-radius: 5px;"><font style="font-weight: bolder;font-size:35px;">
+        <center>LOAN AND FINANCE RELATED TOP WEBSITES</center></font></div>
+    <div ng-app="myApp" ng-controller="myController" align="center">
 
+        <!--THE SEARCH BOX-->
+        <h1>TOP 10 LOAN RELATED WEBSITES</h1>
+        <font style="font-size: 25px;">Search&emsp;</font><input type="Search" ng-model="search" 
+            placeholder="Enter text to search" /><img src=""><br><br>
 
+        <table>
+            <tr>
+                <th>Rank</th>
+                    <th>Website</th>
+                        <th>Category</th>
+                            <th>Avg. visit duration</th>
+                                <th>Pages / visit</th>
+                                    <th>Bounce rate</th>
+            </tr>
 
-	</body>
+            <!--TABLE ROWS WITH A FILTER-->
+            <tr ng-repeat="fires in forest | filter : search">
+
+                <td>{{fires.rank}}</td>
+                    <td>{{fires.website}}</td>
+                        <td>{{fires.category}}</td>
+                            <td>{{fires.Avgvisit}}</td>
+                                <td>{{fires.pages/visit}}</td>
+                                    <td>{{fires.bounce_rate}}</td>
+                            
+                                
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    angular.module("myApp", [])
+        .controller('myController', ['$scope', function ($scope) {
+
+            // JSON ARRAY OBJECT.
+            $scope.forest =
+            [{
+   "rank":1,
+   "website":"paypal.com",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:04:01",
+   "pages/visit":5.60,
+   "bounce_rate":"20.99%"
+   },
+   {
+   "rank":2,
+   "website":"tradingview.com",
+   "category":"Finance>investing",
+   "Avgvisit":"00:04:01",
+   "pages/visit":5.60,
+   "bounce_rate":"53.22%"
+},
+   {
+   "rank":3,
+   "website":"chase.com",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:07:14",
+   "pages/visit":5.60,
+   "bounce_rate":"14.80%"
+   },
+   {
+   "rank":4,
+   "website":"caixa.gov.br",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:04:23",
+   "pages/visit":5.60,
+   "bounce_rate":"41.25%"
+   },
+   {
+   "rank":5,
+   "website":"investing.com",
+   "category":"Finance>investing",
+   "Avgvisit":"00:05:04",
+   "pages/visit":5.60,
+   "bounce_rate":"51.52%"
+   },
+   {
+   "rank":6,
+   "website":"coinmarketcap.com",
+   "category":"Finance>investing",
+   "Avgvisit":"00:04:17",
+   "pages/visit":5.60,
+   "bounce_rate":"56.43%"
+   },
+   {
+   "rank":7,
+   "website":"wellsfargo.com",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:06:04",
+   "pages/visit":5.60,
+   "bounce_rate":"14.86%"
+},
+   {
+   "rank":8,
+   "website":"capitalone.com",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:04:01",
+   "pages/visit":5.40,
+   "bounce_rate":"19.88%"
+},
+    {
+   "rank":9,
+   "website":"bankofamerica.com",
+   "category":"Finance>banking credit and lending",
+   "Avgvisit":"00:05:07",
+   "pages/visit":5.60,
+   "bounce_rate":"25.07%"
+},
+    {
+   "rank":10,
+   "website":"intuit.com",
+   "category":"Finance>other finance",
+   "Avgvisit":"00:11:09",
+   "pages/visit":5.60,
+   "bounce_rate":"27.63%"
+}
+   ]
+
+        } ]);
+</script>
+     </body>
 </html>
+
+
+
+	
