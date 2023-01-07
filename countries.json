@@ -1,0 +1,22 @@
+[
+    {
+        "Amount":"50Lacs", 
+        "Interest":"2.5%"
+    },
+    {
+        "Amount":"60Lacs", 
+        "Interest":"3%"
+    },
+    {
+        "Amount":"70Lacs", 
+        "Interest":"3.5%"
+    },
+    {
+        "Amount":"80Lacs", 
+        "Interest":"4%"
+    },
+    {
+        "Amount":"90Lacs", 
+        "Interest":"4.5%"
+    }
+]
