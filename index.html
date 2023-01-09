@@ -1,83 +1,24 @@
 <!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<script src="lab7.js"></script>
-<body ng-app="myApp">
-
-<p><a href="#/!main"><h2>Main objective of the website</h2></a></p>
-<a href="#!farmingloan"><h3>Farm equipment finance</h3></a>
-<a href="#!twowheeler"><h3>Two-wheeler finance</h3></a>
-<a href="#!coun"><h3>Home loan amount and interest</h3></a>
-<a href="#!search"><h3>Search</h3></a>
-<div ng-view></div>
-
-<script>
-var app = angular.module("myApp", ["ngRoute"]);
-
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "main.htm",
-    })
-    .when("/farmingloan", {
-        templateUrl : "farmingloan.htm",
-        controller : "farmingloanCtrl"
-    })
-    .when("/twowheeler", {
-        templateUrl : "twowheeler.htm",
-        controller : "twowheelerCtrl"
-    })
-    .when("/coun", {
-        templateUrl : "country.htm",
-        controller : "countryController"
-    })
-    .when("/search", {
-        templateUrl : "test.html",
-        controller : "myCont"
-    });
-});
-app.controller("farmingloanCtrl", function ($scope) {
-    $scope.msg = "*Terms & Conditions Apply. Credit at the sole discretion of the company.";
-});
-app.controller("farmingloanCtrl", function ($scope) {
-    $scope.msg = "*Terms & Conditions Apply. Credit at the sole discretion of the company.";
-});
-
-app.controller('countryController', function($scope, $http) {                 
-    $http({
-        method: 'GET',
-        url: 'countries.json'
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retrieving Data from JSON</title>
+    <script>
+      const onClick = async () => {
+        const data = await fetch("http://localhost:3000/json", {
+          method: "GET",
         })
-        .then(function successCallback(response) {
-            $scope.countries = response.data;
-        }, function errorCallback(response) {
-            console.log('Something went wrong.');
-        }); 
-});
-var myController = function ($scope)
-     {
-          var Employee = [
-          {
-            LongTerm: "Shared Capitals",MediumTerm: "Bank loans",ShortTerm: "Bank overdraft",
-          },
-          {
-            LongTerm: "Retained Profits",MediumTerm: "Leasing",ShortTerm: "Trade creditors",
-          },
-          {
-            LongTerm: "Venture Capital",MediumTerm: "Hire purchase",ShortTerm: "Factoring",
-          },
-          {
-            LongTerm: "Mortgages",MediumTerm: "Government grants",ShortTerm: "Commercial bank loans",
-          },
-          {
-            LongTerm: "Loan term bank loans",MediumTerm: "Borrowing from public deposit",ShortTerm: "Secured loans",
-          }];
-     $scope.Emp = Employee;
-     };
-app.controller("myCont", myController);
-
-</script>
-
-</body>
+          .then((res) => res.json())
+          .then((data) => data);
+        document.getElementById("name").innerHTML = data.name;
+      };
+    </script>
+  </head>
+  <body>
+    <p>name</p>
+    <p id="name"></p>
+    <button onclick="onClick()">Show data</button>
+  </body>
 </html>
